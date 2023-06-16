@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PHASE1=../../circuits/pot25_final.ptau
-CIRCUIT_NAME=signature
+CIRCUIT_NAME=rotate.circom
 BUILD_DIR=../../build/"$CIRCUIT_NAME"
 
 if [ -f "$PHASE1" ]; then
@@ -32,11 +32,11 @@ make
 end=`date +%s`
 echo "DONE ($((end-start))s)"
 
-echo "****VERIFYING WITNESS****"
-start=`date +%s`
-./"$CIRCUIT_NAME" ../../../scripts/"$CIRCUIT_NAME"/input_"$CIRCUIT_NAME".json ../witness.wtns
-end=`date +%s`
-echo "DONE ($((end-start))s)"
+#echo "****VERIFYING WITNESS****"
+#start=`date +%s`
+#./"$CIRCUIT_NAME" ../../../scripts/"$CIRCUIT_NAME"/input_"$CIRCUIT_NAME".json ../witness.wtns
+#end=`date +%s`
+#echo "DONE ($((end-start))s)"
 
 cd ..
 snarkjs wej witness.wtns witness.json
