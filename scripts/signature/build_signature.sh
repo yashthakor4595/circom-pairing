@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PHASE1=../../circuits/pot25_final.ptau
-CIRCUIT_NAME=rotate.circom
+CIRCUIT_NAME=rotate
 BUILD_DIR=../../build/"$CIRCUIT_NAME"
 
 if [ -f "$PHASE1" ]; then
